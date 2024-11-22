@@ -143,42 +143,8 @@ void leAteEnter(char *str)
 
 int conversaoCharParaInt(char num)
 {
-    int n = (int)num;
-    int result;
-    switch (n)
-    {
-    case 48:
-        result = 0;
-        break;
-    case 49:
-        result = 1;
-        break;
-    case 50:
-        result = 2;
-        break;
-    case 51:
-        result = 3;
-        break;
-    case 52:
-        result = 4;
-        break;
-    case 53:
-        result = 5;
-        break;
-    case 54:
-        result = 6;
-        break;
-    case 55:
-        result = 7;
-        break;
-    case 56:
-        result = 8;
-        break;
-    case 57:
-        result = 9;
-        break;
-    default:
-        break;
-    }
-    return result;
+    // 48 é o valor de 0 na tabela ASCII
+    // num sendo um char, quando fazemos (int)num [a conversão de um char para um int] ele retorna o valor desse char da tabela ASCII
+    // como quero valores de 0-9, na tabela ASCII 48-47 faço o valor que passaram módulo de 48, pois o que sobra da divisão é o valor que eu busco
+    return (int)num % 48;
 }
